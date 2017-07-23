@@ -1,0 +1,81 @@
+# this is a sample sap program #
+
+# anything between pounds are a comment #
+
+# the print function can print numbers, variables, and strings #
+print 3
+print 5.5
+print -8.99
+
+print "Hello World!"
+print "This is SAP"
+
+# the let function assigns a value to a variable #
+let a 3
+print a
+
+# math can be preformed on numbers and variables #
+print 2 + 2
+print (2 + 2) * (3 + 4)
+
+let a 5
+print a + 2
+
+let b 2
+print a + b
+
+# function can be created with the function command
+function <function name> { function body } 
+All variables are global, therefor a function can access variables 
+that were defined outside of its body. Varibles defined
+inside a function body can be accesed outside of it, after it is ran #
+
+function calcDistance {
+
+	# the ini function ensures that a variable is initialized 
+	if the variable has a value, then it does nothing
+	if the variable is not define, then it is defined to 0 by default.
+	other initalization values can be specified.
+
+	ini <variable name>
+	ini <variable name> <value> #
+
+	ini x1 ini y1 ini x2 ini y2
+	let distance sqrt (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)
+}
+
+# the run command can run a function #
+
+run calcDistance
+
+# lets calculate the distance between the points (0,0) and (3,3) #
+# the calcDistance function uses the variables x1, y1, x2, y2 #
+# it also defines the variable distance #
+
+let x1 0
+let y1 0
+
+let x2 3
+let y2 3
+
+run calcDistance
+
+print "Distance between (0,0) and (3,3) = "
+print distance
+
+# if you run your file with arguments they will be put into variables before parsing 
+sap <your file> <number1> <number2> ... <numberN>
+these inputs are stored in in1, in2, in3 ... inN #
+
+ini in1
+
+print "This is the first input"
+print in1
+
+
+# if statements can be used to test variables and numbers #
+# if <condition> { body } #
+
+if in1 == 2 {
+	print "in1 == 2 is true!"
+}
